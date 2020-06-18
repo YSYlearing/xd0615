@@ -9,11 +9,11 @@ void setup()
   Serial.println("ok");
 }
 /*
-棰勫畾
-'f'琛ㄧず鍓嶈繘
-鈥檅'琛ㄧず鍚庨�� 
-'r'琛ㄧず鍙宠浆 
-'l'琛ㄧず宸﹁浆
+预定
+'f'表示前进
+’b'表示后退 
+'r'表示右转 
+'l'表示左转
 */
 void loop()
 {
@@ -22,25 +22,25 @@ void loop()
     ch=Serial.read();
     switch(ch)
     {
-      case'f':
+      case'b':
        digitalWrite(6,HIGH);
        digitalWrite(7,LOW);
        digitalWrite(8,HIGH);
        digitalWrite(9,LOW);
       break;
-      case'b':
+      case'f':
        digitalWrite(7,HIGH);
        digitalWrite(6,LOW);
        digitalWrite(9,HIGH);
        digitalWrite(8,LOW);
       break;
-      case'r':
+      case'l':
        digitalWrite(7,HIGH);
        digitalWrite(6,LOW);
        digitalWrite(8,HIGH);
        digitalWrite(9,LOW);
       break;
-      case'l':
+      case'r':
        digitalWrite(6,HIGH);
        digitalWrite(7,LOW);
        digitalWrite(9,HIGH);
