@@ -31,19 +31,48 @@ void setup()
 
 }
 byte income=0;
+byte income1=0;
+byte income2=0;
+byte income3=0;
 void loop()
 {
    if(Serial.available()>0)
   {
   	income=Serial.read();
-    
     income=income-'0';
     digitalWrite(S1,LOW);
     digitalWrite(2,income&0x1);
     digitalWrite(3,(income>>1)&0x1);
     digitalWrite(4,(income>>2)&0x1);
     digitalWrite(5,(income>>3)&0x1);
+    delay(10);
     digitalWrite(S1,HIGH);
-  	delay(10);
+    income1=Serial.read();
+    income1=income1-'0';
+    digitalWrite(S2,LOW);
+    digitalWrite(2,income1&0x1);
+    digitalWrite(3,(income1>>1)&0x1);
+    digitalWrite(4,(income1>>2)&0x1);
+    digitalWrite(5,(income1>>3)&0x1);
+    delay(10);
+    digitalWrite(S2,HIGH);
+  	income2=Serial.read();
+    income2=income2-'0';
+    digitalWrite(S3,LOW);
+    digitalWrite(2,income2&0x1);
+    digitalWrite(3,(income2>>1)&0x1);
+    digitalWrite(4,(income2>>2)&0x1);
+    digitalWrite(5,(income2>>3)&0x1);
+    delay(10);
+    digitalWrite(S3,HIGH);
+    income3=Serial.read();
+    income3=income3-'0';
+    digitalWrite(S4,LOW);
+    digitalWrite(2,income3&0x1);
+    digitalWrite(3,(income3>>1)&0x1);
+    digitalWrite(4,(income3>>2)&0x1);
+    digitalWrite(5,(income3>>3)&0x1);
+    delay(10);
+    digitalWrite(S4,HIGH);
   }
 }
